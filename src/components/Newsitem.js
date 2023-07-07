@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export class Newsitem extends Component {
   render() {
-    let { title, description, imageUrl, newsUrl } = this.props;
+    let { title, description, imageUrl, newsUrl, author, date } = this.props;
     return (
       <div className="container my-3">
         <div className="card">
@@ -19,6 +19,12 @@ export class Newsitem extends Component {
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{description}</p>
+            <p className="card-text">
+              <small className="text-body-secondary">
+                By {!author ? "unknown" : author} on{" "}
+                {new Date(date).toGMTString()}
+              </small>
+            </p>
             <a
               href={newsUrl}
               rel="noopener noreferrer"
