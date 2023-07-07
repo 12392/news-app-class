@@ -7,7 +7,11 @@ export class Newsitem extends Component {
       <div className="container my-3">
         <div className="card" style={{ width: "18rem" }}>
           <img
-            src={imageUrl}
+            src={
+              !imageUrl
+                ? "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-scaled.png"
+                : imageUrl
+            }
             className="card-img-top"
             alt="..."
             style={{ width: "285px", height: "200px" }}
